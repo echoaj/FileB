@@ -1,0 +1,206 @@
+/* References: https://coolors.co/palette/6b2e32-954c50-c1928e-e9c8c4-f3e8cd-dcdbc9-aac5b4-738972-40544b-4f6069 */
+@import url('https://fonts.googleapis.com/css2?family=Amiko&family=Averia+Libre:wght@300&family=Bebas+Neue&family=DM+Sans&family=Heebo:wght@300&family=Hind+Madurai:wght@300&family=Inconsolata:wght@500&family=Lexend+Deca:wght@500&family=Noto+Sans&family=Open+Sans:wght@300&family=Prompt:wght@300&family=Work+Sans:wght@200;400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+@import "./variables";
+
+@function bg($bg-type) {
+    @return map-get($bg-color-palette, $bg-type);
+}
+
+body {
+    font-family: 'Averia Libre', cursive !important;
+    // font-family: "arial";
+
+    margin: 0px;
+    padding: 0px;
+    background-color: bg("background");
+}
+
+.container {
+    height: 100%;
+}
+
+.banner {
+    color: $text-color;
+    background-color: bg("title");
+    text-align: center;
+    text-decoration: none;
+    font-weight: none;
+    margin: 0px;
+    padding: 4px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    background-color: bg("background");
+    position: absolute;
+    top: 27px;
+    bottom: 0;
+    width: 100%;
+    min-height: 500px;
+    min-width: 375px;
+}
+
+button {
+    font-family: inherit;
+}
+
+.text {
+    margin: $bs calc(#{$bs} / 2) $bs $bs;
+    background-color: $text-color;
+    padding: 15px;
+}
+
+.text,
+.file {
+    border-radius: $big-border-radius;
+}
+
+textarea,
+textarea:focus {
+    width: 99%;
+    height: 95%;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.text-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    
+    >button {
+        height: 25px;
+        border-radius: $small-border-radius;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+#clear {
+    background-color: bg("clear");
+}
+
+#copy {
+    background-color: bg("copy");
+}
+
+#enter {
+    background-color: bg("enter");
+}
+
+// ****** File ******
+
+.file {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    margin: $bs $bs $bs calc(#{$bs} / 2);
+    background-color: bg("file");
+    // text-align: center;
+    // position: relative;
+}
+
+.file > section {
+    border-radius: $big-border-radius;
+}
+
+.top {
+    // background-color: lightcyan;
+    position: relative;
+}
+
+.middle {
+    // background-color: lightgreen;
+    position: relative;
+}
+
+#file-download-label {
+    color: bg("download");
+    background-color: rgba(255, 255, 255, 0.07);
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.56);
+    font-size: 2.2vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    border-radius: $big-border-radius;
+    overflow-wrap: break-word;
+    max-width: 75%;
+}
+
+.file-button-group {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.big-button {
+    font-size: 20px;
+    width: 170px;
+    height: 65px;
+    color: $text-color;
+    border-radius: $small-border-radius;
+    border: none;
+    cursor: pointer;
+}
+
+#file-button{
+    background-color: bg("enter");
+}
+
+#file-button-upload {
+    background-color: bg("copy");
+    margin-top: 15px;
+}
+
+#file-button-download {
+    color: bg("file");
+    background-color: bg("download");
+    padding-right: 20px;
+}
+
+button:hover {
+    filter: brightness(115%);
+}
+
+button:active {
+    filter: brightness(100%);
+    transform: scale(1.02); 
+}
+
+h1 {
+    font-size: 2vw;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+    }
+    h1 {
+        font-size: 4vw;
+    }
+    .text, .file {
+        margin: 20px;
+    }
+
+    .big-button {
+        font-size: 12px;
+        width: 100px;
+        height: 40px;
+        color: $text-color;
+        border-radius: $small-border-radius;
+        border: none;
+        cursor: pointer;
+    }
+  }

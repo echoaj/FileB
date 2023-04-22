@@ -1,0 +1,206 @@
+/* References: https://coolors.co/palette/6b2e32-954c50-c1928e-e9c8c4-f3e8cd-dcdbc9-aac5b4-738972-40544b-4f6069 */
+@import url("https://fonts.googleapis.com/css2?family=Amiko&family=Averia+Libre:wght@300&family=Bebas+Neue&family=DM+Sans&family=Heebo:wght@300&family=Hind+Madurai:wght@300&family=Inconsolata:wght@500&family=Lexend+Deca:wght@500&family=Noto+Sans&family=Open+Sans:wght@300&family=Prompt:wght@300&family=Work+Sans:wght@200;400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap");
+body {
+  font-family: 'Averia Libre', cursive !important;
+  margin: 0px;
+  padding: 0px;
+  background-color: #9cafb7;
+}
+
+.container {
+  height: 100%;
+}
+
+.banner {
+  color: white;
+  background-color: #003d5b;
+  text-align: center;
+  text-decoration: none;
+  font-weight: none;
+  margin: 0px;
+  padding: 4px;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  background-color: #9cafb7;
+  position: absolute;
+  top: 27px;
+  bottom: 0;
+  width: 100%;
+  min-height: 500px;
+  min-width: 375px;
+}
+
+button {
+  font-family: inherit;
+}
+
+.text {
+  margin: 50px calc(50px / 2) 50px 50px;
+  background-color: white;
+  padding: 15px;
+}
+
+.text,
+.file {
+  border-radius: 15px;
+}
+
+textarea,
+textarea:focus {
+  width: 99%;
+  height: 95%;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.text-buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.text-buttons > button {
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#clear {
+  background-color: #954C50;
+}
+
+#copy {
+  background-color: #738972;
+}
+
+#enter {
+  background-color: #4F6069;
+}
+
+.file {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+  margin: 50px 50px 50px calc(50px / 2);
+  background-color: #333333;
+}
+
+.file > section {
+  border-radius: 15px;
+}
+
+.top {
+  position: relative;
+}
+
+.middle {
+  position: relative;
+}
+
+#file-download-label {
+  color: #d1d1d1;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.56);
+  font-size: 2.2vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  border-radius: 15px;
+  overflow-wrap: break-word;
+  max-width: 75%;
+}
+
+.file-button-group {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.big-button {
+  font-size: 20px;
+  width: 170px;
+  height: 65px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#file-button {
+  background-color: #4F6069;
+}
+
+#file-button-upload {
+  background-color: #738972;
+  margin-top: 15px;
+}
+
+#file-button-download {
+  color: #333333;
+  background-color: #d1d1d1;
+  padding-right: 20px;
+}
+
+button:hover {
+  -webkit-filter: brightness(115%);
+          filter: brightness(115%);
+}
+
+button:active {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+h1 {
+  font-size: 2vw;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 5px;
+  }
+  h1 {
+    font-size: 4vw;
+  }
+  .text, .file {
+    margin: 20px;
+  }
+  .big-button {
+    font-size: 12px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=main.css.map */

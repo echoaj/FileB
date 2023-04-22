@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <script defer src="{% static 'js/main.js' %}"></script>
+    <title>File Bucket</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h4 class="banner">File Bucket: Share files and text with others!</h4>
+
+        <main>
+            <form class="text" method="POST">
+                <!-- Middleware token -->
+                {% csrf_token %}
+                <textarea id="user-text" name="user-input-text" spellcheck="true">{{ text_info }}</textarea>
+                <div class="text-buttons">
+                    <button id="clear" type="submit" name="text-clear-button" onclick="clearText()">Clear</button>
+                    <button id="copy" type="button" onclick="copyToClipboard()">Copy</button>
+                    <button id="enter" type="submit" name="text-enter-button">Enter</button>
+                </div>
+            </form>
+
+            <div class="file">
+                <section class="top">
+                    <div id="file-download-label" style="display: none;" value="{{ file.title }}"></div>
+                </section>
+
+                <section class="middle">
+                    <div class="file-button-group">
+                        <button class="big-button" id="file-button" type="button"></button>
+                        <br><br>
+                        <button class="big-button" id="file-button-download" type="button" style="display: none;"
+                            onclick="downloadFile('{{file.url}}', '{{file.name}}')"></button>
+                    </div>
+                </section>
+
+                <section class="bottom">
+                    <!-- <div>take a trip</div> -->
+                    <form id="file-form" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <!-- <input type="file" id="file-choose" style="display: none" name="doc"
+                              method="post"
+                            enctype="multipart/form-data" data-original-title="choose file"> -->
+
+                        <button id="file-button-upload" name="file-upload-button" style="display: none"
+                            type="submit"></button>
+
+                        {% csrf_token %}
+                    <!-- Make it so that upload button can be pressed. -->
+                        {{ form.file }}
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
